@@ -1,0 +1,95 @@
+<div class="animated fadeIn fast">
+	<h1> 
+		<i class="fa fa-car"></i> Automoviles
+	</h1>
+	<h4>Lote de Automoviles</h4>
+</div>
+<hr>
+
+<div class="row" ng-hide="mostrarSpinner">
+	<div class="col-xs-5">
+	    <label for="ex1">Busqueda por Marca</label>
+	    <input type="text" 
+	           ng-model="busqueda.marca" 
+	           class="form-control" 
+	           placeholder="Ingrese la marca...">
+	</div>
+
+	<div class="col-xs-5">
+		<label for="ex1">Busqueda por Año</label>
+	    <input type="text" 
+	           ng-model="busqueda.anio" 
+	           class="form-control"
+	           placeholder="Ingrese el año...">
+	</div>
+	
+	<br>
+	<div class="col-xs-2" align="right">
+	    <a href="#/automovil/nuevo" class="btn btn-info">
+			<i class="fa fa-plus-circle"> </i>
+			Agregar Automovil
+		</a>
+	</div>
+</div>
+
+<br>
+
+<div class="row" >
+	<div ng-show="mostrarSpinner">
+		<h1 class="loader animated fadeIn fast"></h1>
+		<h1 class="text-center animated fadeIn fast">Cargando Información...</h1>
+	</div>
+	<table class="table table-striped animated fadeIn fast" ng-hide="mostrarSpinner">
+		<tr>
+			<th class="text-left">
+				<a class="puntero" ng-click="columna='id'; reverse = !reverse;">Clave
+			</th>
+			<th class="text-left">
+				<a class="puntero" ng-click="columna='marca'; reverse = !reverse;">Marca
+			</th>
+			<th class="text-left">
+				<a class="puntero" ng-click="columna='modelo'; reverse = !reverse;">Modelo
+			</th>
+			<th class="text-left">
+				<a class="puntero" ng-click="columna='anio'; reverse = !reverse;">Año
+			</th>
+			<th class="text-left">
+				<a class="puntero" ng-click="columna='color'; reverse = !reverse;">Color
+			</th>
+			<th class="text-left">
+				<a class="puntero" ng-click="columna='precio'; reverse = !reverse;">Precio
+			</th>
+			<th class="text-center">Ver Detalle</th>
+		</tr>
+		<tr ng-show="automoviles.length!=0" 
+			ng-repeat="automovil in automoviles | filter:busqueda | limitTo:posicion | limitTo:-5 | orderBy:columna:reverse">
+			<td> {{ automovil.id }} </td>
+			<td> {{ automovil.marca }} </td>
+			<td> {{ automovil.modelo }} {{ automovil.anio | formatoanio }} </td>
+			<td> {{ automovil.anio }} </td>
+			<td> {{ automovil.color }} </td>
+			<td> {{ automovil.precio | currency }} </td>
+			<td align="center">
+				<a href="#/automovil/{{ automovil.id }}" class="btn btn-primary">
+					<i class="fa fa-info-circle"></i>
+				</a>	
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<div ng-show="automoviles.length==0">
+       <h2 class="animated fadeIn text-center">No se encontraron registros...</h2>                
+    </div>
+	
+	<div ng-show="automoviles.length!=0 && !mostrarSpinner" align="center">
+		<button class="btn btn-primary" ng-click="anteriores()">
+			<i class="fa fa-chevron-left"></i>
+			Anteriores
+		</button>	
+		<button class="btn btn-primary" ng-click="siguientes()">
+			Siguientes
+			<i class="fa fa-chevron-right"></i>
+		</button>
+		<hr>
+	</div>
+</div>

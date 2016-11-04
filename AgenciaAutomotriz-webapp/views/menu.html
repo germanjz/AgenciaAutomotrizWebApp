@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/">Agencia Automotriz Gran Turismo</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ng-class="mInicio"><a href="#/">
+          Inicio</a>
+        </li>
+        <li class="dropdown1" ng-class="mAutomovil">
+          <a href="#/automoviles">
+            <i class="fa fa-car"></i>
+            Automoviles <span class="caret"></span>
+          </a>
+          <ul class="dropdown1-content animated fadeIn fast">
+            <a href="#/automoviles">Ver Lista de Automoviles</a>
+            <a href="#/automovil/nuevo">Añadir Automovil</a>
+            <a href="#/marcas">Ver Lista de Marcas de Automoviles</a>
+            <a href="#/marca/nuevo">Añadir Marca</a>
+            <a href="#/modelos">Ver Lista de Modelos de Automoviles</a>
+            <a href="#/modelo/nuevo">Añadir Modelo</a>
+          </ul>
+        </li>
+        <li ng-class="mMotocicleta">
+          <a href="#/motos">
+            <i class="fa fa-motorcycle"></i>
+            Motocicletas
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

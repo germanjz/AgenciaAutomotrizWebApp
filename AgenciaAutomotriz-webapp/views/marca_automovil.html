@@ -1,0 +1,39 @@
+<div class="animated fadeIn fast">
+	<h1> <i class="fa fa-car"></i> Marca de Automóvil</h1>
+	<h4>{{ marca.marca }} </h4>
+	<hr>
+</div>	
+
+<div class="row animated fadeIn fast">
+	<form ng-submit="registrarCambiosMarca()">
+		<div ng-hide="creando">
+			Clave:
+			<br>
+			<input type="text" class="form-control" ng-model="marca.id" readonly="true">
+			<br>
+		</div>
+		
+    	Marca:
+		<br>
+		<input type="text"
+			   class="form-control" 
+			   ng-model="marca.marca" 
+			   placeholder="Ingrese Marca del automóvil."
+			   required>
+		<br>
+
+		<div align="center">
+			<button type="submit" class="btn btn-primary">
+				<i class="fa fa-floppy-o"></i>
+				Guardar Cambios
+			</button>
+			<button type="submit" class="btn btn-danger" ng-hide="creando" ng-click="eliminar()"> 
+				<i class="fa fa-trash-o"></i>
+				Eliminar Registro
+			</button>
+			<a href="#/marcas" class="btn btn-primary">
+				Cancelar
+			</a>
+		</div>
+	</form>
+</div>

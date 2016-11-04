@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="agenciaAutomotrizApp" ng-controller="mainCtrl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Agencia Automotriz Gran Turismo</title>
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- Estilo personalizado -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+        <!-- Incluir Angular-route -->
+        <script src="js/lib/angular-route.min.js"></script>
+        <!-- Incluir validate -->
+        <script src="js/lib/validate.min.js"></script>
+        <!-- Incluir mask -->
+        <script src="js/lib/mask.min.js"></script>
+
+        <!-- Controladores -->
+        <script src="js/app.js"></script>
+        <script src="js/config.js"></script>
+        
+        <script src="js/inicioCtrl.js"></script>
+        <script src="js/automovilesCtrl.js"></script>
+        <script src="js/automovilCtrl.js"></script>
+        <script src="js/marcasAutomovilCtrl.js"></script>
+        <script src="js/marcaAutomovilCtrl.js"></script>
+        <script src="js/modelosAutomovilCtrl.js"></script>
+        <script src="js/modeloAutomovilCtrl.js"></script>
+        <script src="js/motocicletasCtrl.js"></script>
+    </head>    
+    <body>
+        <div ng-include src="menuSuperior"></div>
+        <div class="container">
+        <!-- La pagina principal ira aquí -->
+        <div ng-view></div>
+        </div><!-- /.container -->
+    </body>
+</html>
